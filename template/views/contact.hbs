@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>headerLink}}
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+
+
+    <!------------Navbar Creation ---------------------->
+{{>header}}
+
+
+   <main style="margin:3rem 0rem">
+    
+<section id="form-container">
+
+    <h1 style="text-align:center ;">Contact Form</h1>
+
+    <form action="" method="post">
+     <div class="username">
+        <label for="username">Username <sup style="color:red;">*</sup></label><br><br>
+        <input type="text" required name="username" id="username">
+     </div>
+    
+     <div class="email">
+        <label for="email">Email <sup style="color:red;">*</sup></label><br><br>
+        <input type="emai;"  required name="email" id="email">
+     </div>
+     <div class="comment">
+        <label for="comment">Comments<sup style="color:red;">*</sup></label><br><br>
+        <textarea name="" id="comment" required name="comment" cols="30" rows="10"></textarea>
+     </div>
+
+     <button type="submit" id="submit-form">Submit</button>
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+</section>
+</main>
+{{>footer}}
+{{>footerlink}}
+    <script>
+    let url=`https://newsapi.org/v2/everything?q=bitcoin&apiKey=42ddbb70a0b4408bb9218beb697b18e7`;
+  async function fetchData()
+  {
+
+const rawdata=await fetch(url);
+        if (rawdata.status != 200) {
+        const message = `An error has occured: ${response.status}`;
+        throw new Error(message);
+        }
+     
+        const data= await rawdata.json();
+        return data;
+      
+ 
+}
+   
+  
+  fetchData().then((mainData)=>{
+    const articlesList=mainData.articles;
+    console.log(articlesList[0])
+    console.log(articlesList[0].author);
+    console.log(articlesList[0].title);
+    console.log(articlesList[0].description)
+    console.log(articlesList[0].url);
+  
+  }).catch((err)=>{
+    console.log(err.message);
+  })
+    </script>
+</body>
+</html>

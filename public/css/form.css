@@ -1,0 +1,28 @@
+
+#form-container{
+    width: 40%;
+    margin: auto;
+   
+}
+.email{
+    margin: 2rem 0rem;
+}
+input{
+    width: 100%;
+    padding: 8px 10px;
+    outline: none;
+}
+textarea{
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+#submit-form{
+    padding: 10px 20px;
+    outline: none;
+    border:none;
+    background-color: blue;
+    color: #000;
+    cursor: pointer;
+}

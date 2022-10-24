@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#dynamic-place{
+     width: 90%;
+    margin: 3rem auto;
+   
+}
+#dynamic-heading{
+    color: cornflowerblue;
+}
+
+#dynamic-temp{
+    font-size: 4rem;
+    transform: scale(1);
+}
+.dynamic-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 2rem;
+    
+}
+.dynamic-content-list{
+    background-color: aqua;
+ 
+    text-align: center;
+    padding: 20px;
+   color: #fff;
+   margin-left: 0.4rem;
+}
+
+.dynamic-content-list p{
+    font-size: 1.8rem;
+    margin: 0.4rem auto;
+}
+.dynamic-temp{
+    font-size:1.8rem;
+    color:rgb(255, 255, 255);
+    margin: 1.2rem 0rem;
+}
+
+
+
+@media(max-width:748px){
+    .dynamic-container,.news-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .dynamic-content-list{
+        margin-top: 9px;
+    }
+   
+}
